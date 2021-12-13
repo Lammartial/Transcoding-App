@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="images">
+    <file>digital globe.jpg</file>
+    <file>flowing dots.jpg</file>
+    <file>bitcoin.jpg</file>
+  </qresource>
+</RCC>

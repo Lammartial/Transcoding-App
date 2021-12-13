@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="images">
+    <file>cave.jpg</file>
+  </qresource>
+</RCC>
