@@ -5,11 +5,6 @@ A huge amount of private data is transmitted across the Internet every day, maki
 In this work, our strategy will be to implement some well-known cryptographic algorithms into the app as its main function. However, we only plan to deal with a small sample of asymmetric public key algorithms instead of investigating other algorithms and cryptographic techniques for message integrity, authentication, and digital signatures. In short, assymmetric encryption uses the public key for the encryption, and a private key is used for decryption. 
 Some of the cryptographic algorithms we are going to use in this app is Diffie_Hellman key-exchange algorithm, ElGamal algorithm and RSA algorithm. However, we are still trying to update our app with the implementation of as many algorithms as possible other than the algorithms mentioned above. In this code, the Diffie_Hellman algorithm is working as expected, whereas due to some error, we are still having troubles executing other algorithms and we promise to fix these issues in the future.
 Here is some of the results for Diffie-Hellman:
-
-
-
-
-
-
-
-
+### Encoding
+![result_encoding](https://user-images.githubusercontent.com/91274419/145750514-65f6913b-66f2-4f31-a640-7288e4df42b9.PNG)
+### Decoding
