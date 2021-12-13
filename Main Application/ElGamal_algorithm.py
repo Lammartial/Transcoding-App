@@ -60,36 +60,36 @@ class ElGamal:
             decrypt.append(chr(int(encrypted_mes[i]/h)))
         return decrypt
 
-encrypted_message_list = []
-temp = 0
-msg = input("Enter message to be encrypted: ")
-elgamal = ElGamal(0,0)
-q=random.randint(pow(10,20),pow(10,50))
-elgamal.setK(q)
-g=random.randint(2,q)
-key=elgamal.gen_key(q)
-h=elgamal.power(g,key,q)
-encrypted_mes = elgamal.encryption(msg,q,h)
+# encrypted_message_list = []
+# temp = 0
+# msg = input("Enter message to be encrypted: ")
+# elgamal = ElGamal(0,0)
+# q=random.randint(pow(10,20),pow(10,50))
+# elgamal.setK(q)
+# g=random.randint(2,q)
+# key=elgamal.gen_key(q)
+# h=elgamal.power(g,key,q)
+# encrypted_mes = elgamal.encryption(msg,q,h)
 
 
-print("Original Message=", msg)
-print("Encrypted Message=", encrypted_mes)
+# print("Original Message=", msg)
+# print("Encrypted Message=", encrypted_mes)
 
 
-msg1 = ' '.join([str(i) for i in encrypted_mes])
-myList = msg1.split(" ")
-# print(myList)
-for item in myList:
-    for i in item:
-        temp = temp * 10 + int(i) 
-    encrypted_message_list.append(temp)
-    temp = 0
+# msg1 = ' '.join([str(i) for i in encrypted_mes])
+# myList = msg1.split(" ")
+# # print(myList)
+# for item in myList:
+#     for i in item:
+#         temp = temp * 10 + int(i) 
+#     encrypted_message_list.append(temp)
+#     temp = 0
 
-print("encrypted list is", encrypted_message_list)
+# print("encrypted list is", encrypted_message_list)
 
-d_msg = elgamal.decryption(encrypted_message_list,key,q, g)
-print(d_msg)
-decrypted_message=''.join(d_msg)
-print(decrypted_message)
-output = unicodedata.normalize('NFKD', decrypted_message).encode('ASCII', 'ignore').decode("utf-8") 
-print("Decryted Message =", output)
+# d_msg = elgamal.decryption(encrypted_message_list,key,q, g)
+# print(d_msg)
+# decrypted_message=''.join(d_msg)
+# print(decrypted_message)
+# output = unicodedata.normalize('NFKD', decrypted_message).encode('ASCII', 'ignore').decode("utf-8") 
+# print("Decryted Message =", output)
