@@ -609,15 +609,15 @@ class Registration(QMainWindow):
 # RUNNING
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    # window = QtWidgets.QMainWindow()
-    # window = SplashScreen()
+    window = QtWidgets.QMainWindow()
+    window = SplashScreen()
 
-    # login = Login()
-    # login.show()
+#     login = Login()
+#     login.show()
 
-    # loadingScreen = LoadingScreen()
-    # loadingScreen.show()
+#     loadingScreen = LoadingScreen()
+#     loadingScreen.show()
 
-    main = MainWindow()
-    main.show()
+#     main = MainWindow()
+#     main.show()
     sys.exit(app.exec_())
