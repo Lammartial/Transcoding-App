@@ -4,8 +4,7 @@ import sys
 import dataBase
 
 # TIME DURATION
-import time, pytz
-from datetime import datetime
+from time import perf_counter
 
 # MEMORY
 import psutil, os
@@ -28,6 +27,7 @@ from mainWinUI import MainWindowUI
 # ENCRYPTION-DECRYPTION ALGORITHM
 from diffie_hellman_algorithm import Diffie_Hellman
 from ElGamal_algorithm import ElGamal
+from RSA_algorithm import RSA
 
 # IMPORT FOR ELGAMAL ALGORITHM
 
