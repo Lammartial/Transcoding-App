@@ -185,7 +185,7 @@ class MainWindow(QMainWindow):
                 aKey = int(aKey)
                 bKey = int(bKey)
                 # Timing a section of python code
-                start_time = time.time()
+                start_time = perf_counter()
 
                 self.diffie_hellman = Diffie_Hellman(aKey, bKey)
                 if self.mode.strip() == "e":  
@@ -193,7 +193,7 @@ class MainWindow(QMainWindow):
                     output = self.diffie_hellman.encrypt(message.split(" "), self.diffie_hellman.astar, self.diffie_hellman.BobKey)
 
                     # End time once the code has finished       
-                    end_time = time.time()
+                    end_time = perf_counter()
 
                     # Total time
                     final_time = end_time - start_time
@@ -211,7 +211,7 @@ class MainWindow(QMainWindow):
                         temp = 0
                     # print("encrypted list is", encrypted_message_list)            
                     output = self.diffie_hellman.decrypt(encrypted_message_list, self.diffie_hellman.bstar, self.diffie_hellman.AliceKey).rstrip()
-                    end_time = time.time()
+                    end_time = perf_counter()
                     # Total time
                     final_time = end_time - start_time
                     self.ui.lineEdit_output.setText(output)
@@ -246,7 +246,7 @@ class MainWindow(QMainWindow):
                     print(output)
 
                     # End time once the code has finished       
-                    end_time = time.time()
+                    end_time = perf_counter()
 
                     # Total time
                     final_time = end_time - start_time
@@ -271,12 +271,60 @@ class MainWindow(QMainWindow):
                     print(d_msg)
 
                     output = unicodedata.normalize('NFKD', d_msg).encode('ASCII', 'ignore').decode("utf-8")
-                    end_time = time.time()
+                    end_time = perf_counter()
                     # Total time
                     final_time = end_time - start_time
                     self.ui.lineEdit_output.setText(output)
                     self.ui.lineEdit_time.setText(str(final_time))
                     self.ui.lineEdit_memory.setText(str(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2))
+                    
+        # RSA algorithm
+
+        if self.algorithm == "RSA":
+            temp = 0
+            if len(message) == 0:
+
+                self.ui.err.setText("Please input all the fields.")
+                QtCore.QTimer.singleShot(3500, lambda: self.ui.err.setText(""))
+                self.ui.lineEdit_output.setText('')
+
+            else:
+                print("Button clicked!")
+                self.ui.err.setText("")
+
+                # Timing a section of python code
+                start_time = perf_counter()
+                self.rsa = RSA()
+                if self.mode.strip() == "e":  
+
+                    output = self.rsa.rsa_encryption(message.split(" "), self.rsa.e, self.rsa.p, self.rsa.q)
+
+                    # End time once the code has finished       
+                    end_time = perf_counter()
+
+                    # Total time
+                    final_time = end_time - start_time
+                    self.ui.lineEdit_output.setText(' '.join([str(i) for i in output]))
+                    self.ui.lineEdit_time.setText(str(final_time))
+                    self.ui.lineEdit_memory.setText(str(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2))
+
+                elif self.mode.strip() == "d":
+                    myList = message.split(" ")
+                    # print("my list is", myList)
+                    for item in myList:
+                        for i in item:
+                            temp = temp * 10 + int(i) 
+                        encrypted_message_list.append(temp)
+                        temp = 0
+                    # print("encrypted list is", encrypted_message_list)            
+                    output = self.rsa.rsa_decryption(self.rsa.p,self.rsa.q,self.rsa.e, encrypted_message_list)
+                    end_time = perf_counter()
+                    # Total time
+                    final_time = end_time - start_time
+                    self.ui.lineEdit_output.setText(output)
+                    self.ui.lineEdit_time.setText(str(final_time))
+                    self.ui.lineEdit_memory.setText(str(psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2))        
+
 
 
 # LOADING SCREEN
