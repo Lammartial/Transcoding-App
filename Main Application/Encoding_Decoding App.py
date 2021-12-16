@@ -132,6 +132,10 @@ class MainWindow(QMainWindow):
                 self.ui.lineEdit_time.setText("")
                 # making other check box to uncheck
                 self.ui.checkBox.setChecked(False)
+            else: 
+                self.ui.checkBox.setChecked(False)
+                self.ui.checkBox_2.setChecked(False)
+
 
     def resetText(self):
         self.ui.lineEdit_key.setText("")
