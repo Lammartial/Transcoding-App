@@ -8,7 +8,7 @@ In this work, our strategy will be to implement some well-known cryptographic al
 Some of the cryptographic algorithms we are going to use in this app is Diffie_Hellman key-exchange algorithm, ElGamal algorithm and RSA algorithm. However, we are still trying to update our app with the implementation of as many algorithms as possible other than the algorithms mentioned above. In this code, the Diffie_Hellman algorithm and RSA algorithm is working as expected, however, due to some error, we are still having troubles executing other algorithms and we look forward to fixing these issues in the future.\
 
 #### Note: You will have to install additional python packages via pip to make the app function properly. Type these commands in your cmd:
-pip install PyQt5
+pip install PyQt5\
 pip install PySide2
 
 
