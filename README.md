@@ -12,8 +12,15 @@ pip install PyQt5\
 pip install PySide2
 
 
-Here is some of the results for Diffie-Hellman:
+Below are some of the results for Diffie-Hellman:
 ### Encoding
 ![result_encoding](https://user-images.githubusercontent.com/91274419/145750514-65f6913b-66f2-4f31-a640-7288e4df42b9.PNG)
 ### Decoding
 ![result_decoding](https://user-images.githubusercontent.com/91274419/145750782-27b1efec-680f-483f-a15b-9d13a06ff1d2.PNG)
+
+Below are some of the results for RSA:
+### Encoding
+![result_encoding](https://user-images.githubusercontent.com/91274419/201384994-4078ebad-be14-4954-9f23-8d45112817df.png)
+### Decoding
+![result-decoding](https://user-images.githubusercontent.com/91274419/201385196-73eafdc7-56cf-4d62-a391-4f8835d06240.png)
+
