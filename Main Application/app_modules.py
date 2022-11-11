@@ -4,6 +4,7 @@ import sys
 import dataBase
 
 # TIME DURATION
+import time
 from time import perf_counter
 
 # MEMORY

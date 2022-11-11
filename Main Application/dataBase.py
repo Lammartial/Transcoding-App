@@ -1,11 +1,11 @@
 from PyQt5 import QtSql
 
 db = QtSql.QSqlDatabase.addDatabase("QSQLITE", "db")
-db.setDatabaseName("D:\PDF files Vinuni 1st year\Second Year\Fall Semester 2021\MATH2020 - Discrete Mathematics\Mini Project\Official version\SQLDatabase\data.sqlite")
+db.setDatabaseName("D:\VinUni materials\Second Year\Fall Semester 2021\MATH2020 - Discrete Mathematics\Mini Project\Official version\Transcoding-App\SQLDatabase\data.sqlite")
 db.open()
 
 RememberMe = QtSql.QSqlDatabase.addDatabase("QSQLITE", "RememberMe")
-RememberMe.setDatabaseName("D:\PDF files Vinuni 1st year\Second Year\Fall Semester 2021\MATH2020 - Discrete Mathematics\Mini Project\Official version\SQLDatabase\RememberMe.sqlite")
+RememberMe.setDatabaseName("D:\VinUni materials\Second Year\Fall Semester 2021\MATH2020 - Discrete Mathematics\Mini Project\Official version\Transcoding-App\SQLDatabase\RememberMe.sqlite")
 
 RememberMe.open()
 
